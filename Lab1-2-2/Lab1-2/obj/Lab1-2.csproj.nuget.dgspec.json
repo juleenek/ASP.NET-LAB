@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Desktop\\Code\\Lab1-2-2\\Lab1-2\\Lab1-2.csproj": {}
+    "\\\\Mac\\Home\\Desktop\\Code\\ASP.NET-LAB\\Lab1-2-2\\Lab1-2\\Lab1-2.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Desktop\\Code\\Lab1-2-2\\Lab1-2\\Lab1-2.csproj": {
+    "\\\\Mac\\Home\\Desktop\\Code\\ASP.NET-LAB\\Lab1-2-2\\Lab1-2\\Lab1-2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\Code\\Lab1-2-2\\Lab1-2\\Lab1-2.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\Code\\ASP.NET-LAB\\Lab1-2-2\\Lab1-2\\Lab1-2.csproj",
         "projectName": "Lab1-2",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\Code\\Lab1-2-2\\Lab1-2\\Lab1-2.csproj",
+        "projectPath": "\\\\Mac\\Home\\Desktop\\Code\\ASP.NET-LAB\\Lab1-2-2\\Lab1-2\\Lab1-2.csproj",
         "packagesPath": "C:\\Users\\julialinek\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\Code\\Lab1-2-2\\Lab1-2\\obj\\",
+        "outputPath": "\\\\Mac\\Home\\Desktop\\Code\\ASP.NET-LAB\\Lab1-2-2\\Lab1-2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\julialinek\\AppData\\Roaming\\NuGet\\NuGet.Config",

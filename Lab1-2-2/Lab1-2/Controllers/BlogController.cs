@@ -36,11 +36,12 @@ namespace Lab1_2.Controllers
         [HttpPost]
         public IActionResult Edit(BlogItem itemFromForm)
         {
-            int id = itemFromForm.Id;
-            BlogItem originItem = findById(id);
-            originItem.Content = itemFromForm.Content;
-            originItem.Title = itemFromForm.Title;
-            repository.Update(itemFromForm);
+            itemFromForm = repository.Update(itemFromForm);
+            //int id = itemFromForm.Id;
+            //BlogItem originItem = findById(id);
+            //originItem.Content = itemFromForm.Content;
+            //originItem.Title = itemFromForm.Title;
+            //repository.Update(itemFromForm);
 
             return View("BlogList", repository.FindAll());
         }
@@ -62,8 +63,9 @@ namespace Lab1_2.Controllers
         {
             if (ModelState.IsValid)
             {
-                item.CreationTimstamp = DateTime.Now;
-                repository.Add(item);
+                item = repository.Add(item);
+                //item.CreationTimstamp = DateTime.Now;
+                //repository.Add(item);
                 //items.Add(item);
                 return View("ConfirmBlogItem", item);
             }

@@ -14,11 +14,12 @@ namespace Lab1_2.Models {
     }
     public interface IBlogItemRepository
     {
-        BlogItem Find(int id);
+        BlogItem FindById(int id);
         BlogItem Delete(int id);
         BlogItem Add(BlogItem blogItem);
         BlogItem Update(BlogItem blogItem);
         IList<BlogItem> FindAll();
+        IList<BlogItem> FindPage(int page, int size);
         // IQueryable<BlogItem> BlogItems { get; }
     }
     public class ItemBlogRepository : IBlogItemRepository
@@ -28,13 +29,14 @@ namespace Lab1_2.Models {
         {
             _context = context;
         }
-        public BlogItem Find(int id)
+        public BlogItem FindById(int id)
         {
+            _context.Find(typeof(BlogItem), id);
             return _context.BlogItems.Find(id);
         }
         public BlogItem Delete(int id)
         {
-            var item = _context.BlogItems.Remove(Find(id)).Entity; 
+            var item = _context.BlogItems.Remove(FindById(id)).Entity; 
             _context.SaveChanges();
 
             return item;
@@ -56,6 +58,13 @@ namespace Lab1_2.Models {
         public IList<BlogItem> FindAll()
         {
             return _context.BlogItems.ToList();
+        }
+        public IList<BlogItem> FindPage(int page, int size)
+        {
+           return (from item in _context.BlogItems orderby item.CreationTimstamp select item)
+                .Skip(page * size)
+                .Take(size)
+                .ToList();
         }
         //public IQueryable<BlogItem> BlogItems => _context.BlogItems;
     }

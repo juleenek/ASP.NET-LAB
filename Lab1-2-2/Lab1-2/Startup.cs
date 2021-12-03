@@ -29,7 +29,6 @@ namespace Lab1_2
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration["Data:Products:ConnectionString"]));
             services.AddTransient<IBlogItemRepository, ItemBlogRepository>();
-            
             services.AddMvc();
             services.AddMemoryCache();
             services.AddSession();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Farj3VRFg2HmwY6OPJLNr4nCD6omfPzxkZUW3sIDCE1TwOMuE581e3eqKs2Q3P+GFoNBHdbtQ+HI+ujZWSge8w==",
+  "dgSpecHash": "2YdpSZngIpKk1VG8LCjXiUFgKbNbDZv/H6Vamil4PczVSzQ5yMybBG9QGKfpfyBQ390C5Qw5oLWJ+AhUVOKe/Q==",
   "success": true,
-  "projectFilePath": "\\\\Mac\\Home\\Desktop\\Code\\Lab1-2-2\\Lab1-2\\Lab1-2.csproj",
+  "projectFilePath": "\\\\Mac\\Home\\Desktop\\Code\\ASP.NET-LAB\\Lab1-2-2\\Lab1-2\\Lab1-2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\julialinek\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\julialinek\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
