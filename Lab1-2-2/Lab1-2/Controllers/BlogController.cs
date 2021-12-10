@@ -94,5 +94,18 @@ namespace Lab1_2.Controllers
             }
             return null;
         }
+        [HttpGet]
+        public String Add()
+        {
+            var item = new BlogItem()
+            {
+                Content = "TEST",
+                Title = "TEST"
+            };
+            item.Tags.Add(item: new Tag { Name = "C#" });
+            item.Tags.Add(item: new Tag { Name = "ASP.NET" });
+            repository.Update(item);
+            return "New BlogItem SAVED";
+        }
     }
 }

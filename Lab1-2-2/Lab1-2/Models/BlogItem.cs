@@ -11,6 +11,7 @@ namespace Lab1_2.Models {
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<BlogItem> BlogItems { get; set; }
+        public DbSet<Tag> Tags { get; set; } // !!!
     }
     public interface IBlogItemRepository
     {
@@ -21,6 +22,8 @@ namespace Lab1_2.Models {
         IList<BlogItem> FindAll();
         IList<BlogItem> FindPage(int page, int size);
         // IQueryable<BlogItem> BlogItems { get; }
+
+        void addTagToBlogItem(int blogItemId, int tagId);
     }
     public class ItemBlogRepository : IBlogItemRepository
     {
@@ -67,9 +70,22 @@ namespace Lab1_2.Models {
                 .ToList();
         }
         //public IQueryable<BlogItem> BlogItems => _context.BlogItems;
+
+        public void addTagToBlogItem(int blogItemId, int tagId)
+        {
+            var item = _context.BlogItems.Find(blogItemId);
+            var tag = _context.Tags.Find(tagId);
+            item.Tags.Add(tag);
+
+            Update(item);
+        }
     }
     public class BlogItem
     {
+        public BlogItem()
+        {
+            Tags = new HashSet<Tag>(); // HashSet żeby się nie powtarzało
+        }
         [HiddenInput]
         public int Id { get; set; }
         [Required(ErrorMessage = "Musisz podać tytuł")]
@@ -79,6 +95,6 @@ namespace Lab1_2.Models {
         public string Content { get; set; }
         public DateTime CreationTimstamp { get; set; }
 
-
+        public ICollection<Tag> Tags { get; set; }
     }
 }
