@@ -19,6 +19,7 @@ namespace Lab1_2.Models {
         BlogItem Delete(int id);
         BlogItem Add(BlogItem blogItem);
         BlogItem Update(BlogItem blogItem);
+        BlogItem Save(BlogItem item);
         IList<BlogItem> FindAll();
         IList<BlogItem> FindPage(int page, int size);
         // IQueryable<BlogItem> BlogItems { get; }
@@ -58,6 +59,12 @@ namespace Lab1_2.Models {
 
             return entity;
         }
+        public BlogItem Save(BlogItem item)
+        {
+            var entryEntity = _context.BlogItems.Add(item);
+            _context.SaveChanges();
+            return entryEntity.Entity;
+        }
         public IList<BlogItem> FindAll()
         {
             return _context.BlogItems.ToList();
@@ -94,7 +101,6 @@ namespace Lab1_2.Models {
         [MinLength(length:5, ErrorMessage = "Treść musi mieć przynajmniej 5 znaków")]
         public string Content { get; set; }
         public DateTime CreationTimstamp { get; set; }
-
         public ICollection<Tag> Tags { get; set; }
     }
 }

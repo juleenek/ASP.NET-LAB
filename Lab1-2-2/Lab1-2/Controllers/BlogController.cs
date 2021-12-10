@@ -102,8 +102,8 @@ namespace Lab1_2.Controllers
                 Content = "TEST",
                 Title = "TEST"
             };
-            item.Tags.Add(item: new Tag { Name = "C#" });
-            item.Tags.Add(item: new Tag { Name = "ASP.NET" });
+            item.Tags.Add(new Tag { Name = "C#" });
+            item.Tags.Add(new Tag { Name = "ASP.NET" });
             repository.Update(item);
             return "New BlogItem SAVED";
         }
