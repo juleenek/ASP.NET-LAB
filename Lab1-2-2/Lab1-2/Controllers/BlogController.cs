@@ -95,7 +95,7 @@ namespace Lab1_2.Controllers
             return null;
         }
         [HttpGet]
-        public String Add()
+        public string Test()
         {
             var item = new BlogItem()
             {
@@ -104,7 +104,7 @@ namespace Lab1_2.Controllers
             };
             item.Tags.Add(new Tag { Name = "C#" });
             item.Tags.Add(new Tag { Name = "ASP.NET" });
-            repository.Update(item);
+            repository.Save(item);
             return "New BlogItem SAVED";
         }
     }

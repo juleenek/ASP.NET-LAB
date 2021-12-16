@@ -10,25 +10,26 @@
 
     @foreach (var item in @Model)
     {
-        <tr>
-            <td>@item.Title</td>
-            <td>@item.Content</td>
-            <td>@item.CreationTimstamp</td>
-            <td>
-                <a asp-controller="Blog"
-                   asp-action="Edit"
-                   asp-route-id="@item.Id"
-                   class="btn btn-primary">Edytuj</a>
-                <a asp-controller="Blog"
-                   asp-action="Delete"
-                   asp-route-id="@item.Id"
-                   class="btn btn-danger">Usuń</a>
-                <a asp-controller="Blog"
-                   asp-action="Details"
-                   asp-route-id="@item.Id"
-                   class="btn btn-primary">Szczegóły</a>
-            </td>
-        </tr>
+    <tr>
+        <td>@item.Title</td>
+        <td>@item.Content</td>
+        <td>@item.Tags</td>
+        <td>@item.CreationTimstamp</td>
+        <td>
+            <a asp-controller="Blog"
+               asp-action="Edit"
+               asp-route-id="@item.Id"
+               class="btn btn-primary">Edytuj</a>
+            <a asp-controller="Blog"
+               asp-action="Delete"
+               asp-route-id="@item.Id"
+               class="btn btn-danger">Usuń</a>
+            <a asp-controller="Blog"
+               asp-action="Details"
+               asp-route-id="@item.Id"
+               class="btn btn-primary">Szczegóły</a>
+        </td>
+    </tr>
     }
 
 </table>
