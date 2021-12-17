@@ -2,6 +2,7 @@ using Lab1_2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,8 +27,17 @@ namespace Lab1_2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration["Data:Products:ConnectionString"]));
+
+            services.AddDbContext<AppIdentityDbContext>(options =>
+            options.UseSqlServer(Configuration["Data:Products:ConnectionString"]));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<AppIdentityDbContext>()
+            .AddDefaultTokenProviders();
+
             services.AddTransient<IBlogItemRepository, ItemBlogRepository>();
             services.AddMvc();
             services.AddMemoryCache();
@@ -51,6 +61,7 @@ namespace Lab1_2
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
 
