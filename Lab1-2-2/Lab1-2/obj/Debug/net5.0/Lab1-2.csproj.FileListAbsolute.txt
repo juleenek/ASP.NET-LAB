@@ -204,3 +204,4 @@ D:\Users\julia.linek\source\repos\Lab1-2\Lab1-2\obj\Debug\net5.0\Razor\Views\Blo
 \\Mac\Home\Desktop\Code\ASP.NET-LAB\Lab1-2-2\Lab1-2\obj\Debug\net5.0\Lab1-2.pdb
 \\Mac\Home\Desktop\Code\ASP.NET-LAB\Lab1-2-2\Lab1-2\obj\Debug\net5.0\Lab1-2.genruntimeconfig.cache
 \\Mac\Home\Desktop\Code\ASP.NET-LAB\Lab1-2-2\Lab1-2\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+\\Mac\Home\Desktop\Code\ASP.NET-LAB\Lab1-2-2\Lab1-2\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs

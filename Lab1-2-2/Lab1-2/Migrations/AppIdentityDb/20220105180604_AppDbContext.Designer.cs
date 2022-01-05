@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lab1_2.Migrations.AppIdentityDb
 {
     [DbContext(typeof(AppIdentityDbContext))]
-    [Migration("20211217153912_ApplicationIdentityDbContext")]
-    partial class ApplicationIdentityDbContext
+    [Migration("20220105180604_AppDbContext")]
+    partial class AppDbContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
