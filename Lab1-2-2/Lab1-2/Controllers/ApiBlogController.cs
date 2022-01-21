@@ -1,4 +1,7 @@
-﻿using Lab1_2.Models;
+﻿using Lab1_2.Exception;
+using Lab1_2.Filter;
+using Lab1_2.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Lab1_2.Controllers
 {
+    [ApiController]
     [Route("api/items")]
     public class ApiBlogController : Controller
     {  
@@ -23,8 +27,10 @@ namespace Lab1_2.Controllers
                 return items.FindAll();
             }
 
-            [HttpGet]
+
+            [HttpGet()]
             [Route("{id}")]
+            [DisableBasicAuthentication]
             public ActionResult GetOne(int id)
             {
                 BlogItem blogItem = items.FindById(id);
@@ -34,9 +40,10 @@ namespace Lab1_2.Controllers
                 }
                 else
                 {
-                    return NotFound();
+                    throw new MyException("Brak identyfikatora zasobu!");
                 }
             }
+
 
             [HttpPost]
             public ActionResult Add([FromBody] BlogItem item)
@@ -85,5 +92,6 @@ namespace Lab1_2.Controllers
             }
 
         }
+
     
 }
